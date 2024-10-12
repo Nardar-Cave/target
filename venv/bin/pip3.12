@@ -1,4 +1,6 @@
-#!/workspaces/target/venv/bin/python
+#!/bin/sh
+'''exec' "/home/raphael/Área de trabalho/Experimentos/target/venv/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
