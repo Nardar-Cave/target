@@ -9,20 +9,19 @@ def dados():
         with open('faturamento-api/dados.json') as f:
             dados = json.load(f)
 
-        # Separe os dias com e sem valor
+
         faturamentos_diarios = [(dia['dia'], dia['valor']) for dia in dados if 'valor' in dia]
         sem_faturamento = [dia for dia in dados if 'valor' not in dia]
 
-        # Calcule a média dos dias com faturamento
+
         valores = [float(dado[1]) for dado in faturamentos_diarios]
         media_faturamento_diario = statistics.mean(valores)
 
-        # Calcule o menor e maior valor de faturamento diário, ignorando dias vazios
+
         valores = [float(dado[1]) for dado in faturamentos_diarios if dado[1] is not None]
         menor_valor = min(valores)
         maior_valor = max(valores)
 
-        # Calcule a quantidade de dias com faturamento superior à média, ignorando dias vazios
         qtd_dias_superior_a_media = sum(1 for dado in faturamentos_diarios if float(dado[1]) > media_faturamento_diario)
 
         resposta = {
