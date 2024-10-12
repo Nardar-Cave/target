@@ -16,3 +16,7 @@ python -m venv venv
 pip install -r /faturamento-api/requirements.txt
 
 python faturamento-api/app.py
+
+# Endereço
+
+http://127.0.0.1:5000/dados
